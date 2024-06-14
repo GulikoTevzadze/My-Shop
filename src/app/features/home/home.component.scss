@@ -1,9 +1,11 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 350px);
-  gap: 25px;
+  gap: 40px;
   align-items: center;
   justify-content: center;
+  margin: 40px 0;
+  margin-bottom: 60px;
 }
 
 .block-element {
@@ -13,4 +15,10 @@
   text-decoration: none;
   border-radius: 5px;
   margin: 5px;
+}
+@media (min-width: 768px) {
+  .checkout button {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }

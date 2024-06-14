@@ -1,7 +1,7 @@
 <app-header>
-  <a header-title href="">
+  <a class="header" header-title href="">
     @if (user$ | async; as user) {
-      welcome to shop, {{ user.firstName }}
+      welcome to shop,  <i>{{ user.firstName }}</i> 
     } @else {
       Shop
     }

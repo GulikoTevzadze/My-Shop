@@ -186,8 +186,8 @@ body {
 
 .discount, strike{text-decoration:none;position:relative;}
 .discount::before, strike::before {
-    top: 50%; /*tweak this to adjust the vertical position if it's off a bit due to your font family */
-    background:red; /*this is the color of the line*/
+    top: 50%; 
+    background:red; 
     opacity:.7;
     content: '';
     width: 110%;

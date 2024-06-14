@@ -1,6 +1,4 @@
 <div>
-
-
 <select [(ngModel)]="sortBy" class="block-element">
   <option value="price">Price</option>
   <option value="rating">Rating</option>
@@ -27,7 +25,6 @@
   >
   </app-paginator>
 }
-
 </div>
 
 @if (products$ | async; as products) {
