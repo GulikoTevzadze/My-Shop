@@ -1,0 +1,47 @@
+<form action="">
+  @if (isSignUpSuccess) {
+    <div class="success">
+      Account created successfully. You can now sign in!
+    </div>
+  }
+  @if (errorMessage$ | async; as errorMessage) {
+    <div class="text-danger">
+      {{ errorMessage }}
+    </div>
+  }
+
+  <div class="email">
+    <label for="email">Email Address</label>
+    <input
+      tabindex="1"
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="password">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      tabindex="2"
+      [(ngModel)]="password"
+    />
+  </div>
+  <div class="keep-me">
+    <label for="keepSingedIn"> Keep me singed in</label>
+    <input
+      type="checkbox"
+      name="keepSingedIn"
+      id="keepSingedIn"
+      tabindex="3"
+      [(ngModel)]="keepSignedIn"
+    />
+  </div>
+  <div class="button">
+    <button (click)="onSingIn()">Sign in</button>
+  </div>
+  <div class="link">New here? <a routerLink="/auth/sign-up"> Sign Up </a></div>
+</form>

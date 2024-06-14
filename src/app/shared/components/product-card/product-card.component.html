@@ -1,0 +1,22 @@
+<div class="card" [routerLink]="['/product', product._id]">
+  <img [src]="product.thumbnail" [alt]="product.title" />
+  <div class="card-body">
+    <h3 class="card-title">{{ product.title }}</h3>
+    <h4>{{ product.price.current | currency: "GEL" }}</h4>
+
+    <p class="card-data">Issure Date {{ product.issueDate | date }}</p>
+    <p>Stok: {{ product.stock }}</p>
+
+    <div class="card-buttons">
+      @if (deleteBtnVisible) {
+      <button (click)="deleteProduct.emit(product._id)">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+      } @else {
+      <button [disabled]="!product.stock" (click)="addToCart.emit(product._id);$event.stopPropagation()">
+        <i class="fa-solid fa-cart-shopping" [class]="{'in-stock': product.stock}"></i>
+      </button>
+      }
+    </div>
+  </div>
+</div>

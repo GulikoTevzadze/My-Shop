@@ -1,0 +1,59 @@
+<main class="container" *ngIf="product">
+
+  <div class="product">
+    <div class="product_images">
+
+      <div class="badge">
+        <span>{{product.price.discountPercentage}}%</span>
+      </div>
+      <img #img [src]="product.thumbnail" [alt]="product.title" class="product-main-image" />
+
+
+
+      <div class="product-slider-wrap">
+
+        <div class="product-slider">
+          <img [src]="product.thumbnail" alt="" class="product-image"
+               [class]="{ 'product-image-active' : img.src==product.thumbnail}" (click)="img.src=product.thumbnail">
+          @for (image of product.images; track image) {
+          <img [src]="image" alt="" class="product-image" [class]="{ 'product-image-active' : img.src==image}"
+               (click)="img.src=image">
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="right-column">
+
+    <div class="product-description">
+      <span>{{product.title}}</span>
+      <h1>{{product.brand}}</h1>
+      <p>{{product.description}}</p>
+    </div>
+
+    <div class="product-configuration">
+
+      <p class="detail-label">Issue Date: {{ product.issueDate | date}}</p>
+
+      <p class="detail-label">Warranty: {{ product.warranty }} Years</p>
+
+      <p class="detail-label" *ngIf="product.stock">stock : {{ product.stock }}</p>
+      <p class="detail-label" *ngIf="!product.stock" class="out-of-stock">Out Of Stock</p>
+    </div>
+
+
+    <div class="product-price">
+      <span class="discount" *ngIf="product.price.beforeDiscount != product.price.current">{{product.price.beforeDiscount}}</span>
+      <span>{{product.price.current}} {{product.price.currency}}</span>
+
+      <button
+        class="cart-btn"
+          *ngIf="product.stock"
+          (click)="addToCart(product._id);$event.stopPropagation()">
+          <i class="fa-solid fa-cart-shopping"></i> Add to cart
+        </button>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+form {
+  cursor: pointer;
+  input,
+  button {
+    border: none;
+    background: none;
+  }
+}
+.active {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px   ;
+}
+.success {
+  background-color: green;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+.text-danger {
+ 
+  background-color: red;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+.danger{
+  margin-top: 7px;
+  color: red;
+}

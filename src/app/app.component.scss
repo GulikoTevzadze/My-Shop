@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+  }
+  i {
+    font-size: 35px;
+  }
+
+  .button{
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border-radius: 20px;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  a{
+    margin-left: 10px;
+    &:last-child{
+      margin-right: 40px;
+    }
+  }

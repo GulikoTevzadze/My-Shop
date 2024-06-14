@@ -1,0 +1,16 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-element {
+  display: inline-block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+}

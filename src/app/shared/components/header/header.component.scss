@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+}
+.container {
+  .header-section {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(137, 43, 226, 0.249);
+  }
+}

@@ -1,0 +1,106 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      tabindex="1"
+      type="text"
+      id="firstName"
+      formControlName="firstName"
+    />
+    @if (controls.firstName.dirty) {
+      @if (controls.firstName.errors?.["maxlength"]) {
+        <div class="danger">
+          Name is too Long! Maximum length i s
+          {{ controls.firstName.errors?.["maxlength"]["requiredLength"] }}
+        </div>
+      }
+      @if (controls.firstName.errors?.["required"]) {
+        <div class="danger">Name is required!</div>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="lastName">last Name</label>
+    <input tabindex="2" type="text" id="lastName" formControlName="lastName" />
+    @if (controls.lastName.dirty) {
+      @if (controls.lastName.errors?.["maxlength"]) {
+        <div class="danger">
+          Last name is too Long! Maximum length i s
+          {{ controls.lastName.errors?.["maxlength"]["requiredLength"] }}
+        </div>
+      }
+      @if (controls.lastName.errors?.["required"]) {
+        <div class="danger">Last name is required!</div>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input tabindex="3" type="text" id="age" formControlName="age" />
+  </div>
+  <div class="form-group">
+    <label for="avatar">Avatar</label>
+    <input tabindex="4" type="text" id="avatar" formArrayName="avatar" />
+  </div>
+  <div class="form-group">
+    <label for="gender">Gender </label>
+    <select id="gender" formControlName="gender">
+      @for (gender of genderOptions; track gender) {
+        <option [value]="gender">{{ gender | titlecase }}</option>
+      }
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input tabindex="5" type="email" id="email" formControlName="email" />
+    @if (controls.email.dirty && controls.email.errors) {
+      <div class="danger">Must be a valid email</div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      name="password"
+      tabindex="6"
+      type="password"
+      id="password"
+      formControlName="password"
+    />
+    @if (controls.password.dirty && controls.password.errors) {
+      @if (controls.password.errors["minlength"]) {
+        <div class="danger">Password is too short!</div>
+      }
+    }
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input
+      tabindex="7"
+      type="password"
+      id="confirmPassword"
+      formControlName="confirmPassword"
+    />
+    @if (
+      controls.confirmPassword.dirty && signupForm.errors?.["passwordsMatch"]
+    ) {
+      <div class="danger">
+        {{ signupForm.errors?.["passwordsMatch"] }}
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="Address">Address</label>
+    <input tabindex="8" type="text" id="Address" formArrayName="address" />
+  </div>
+  <div class="form-group">
+    <label for="zipcode">Zipcode</label>
+    <input type="text" id="zipcode" formControlName="zipcode" />
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input tabindex="9" type="tel" id="phone" formControlName="phone" />
+  </div>
+  <div class="button">
+    <button type="submit" >Sign Up</button>
+  </div>
+</form>

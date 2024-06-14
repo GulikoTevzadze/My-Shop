@@ -1,0 +1,15 @@
+<div class="paginator">
+  <select class="page-size" [(ngModel)]="pageSize" (ngModelChange)="changePageSize()">
+    @for (option of sizeOptions; track $index) {
+    <option [value]="option">{{ option }}</option>
+    }
+  </select>
+
+  <div class="pagination">
+    <a class="pointer" (click)="previousPage()">&laquo;</a>
+    @for(page of totalPages; track $index) {
+    <a class="pointer" [class]="{'active': $index + 1 === pageIndex}" (click)="changePage($index + 1)">{{ $index + 1}}</a>
+    }
+    <a class="pointer" (click)="nextPage()">&raquo;</a>
+  </div>
+</div>

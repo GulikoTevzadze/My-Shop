@@ -1,0 +1,57 @@
+form {
+  font-family: serif;
+  font-size: 25px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 80px;
+  .email {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    label {
+      margin-bottom: 10px;
+    }
+    input {
+      all: unset;
+      border-bottom: 3px solid blueviolet;
+    }
+  }
+  .password {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    label {
+      margin-bottom: 10px;
+    }
+    input {
+      all: unset;
+      border-bottom: 3px solid blueviolet;
+    }
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
+    button {
+      padding: 15px 20px;
+      cursor: pointer;
+      border: 3px solid blueviolet;
+      background-color: blueviolet;
+      border-radius: 20px;
+      margin: auto;
+      margin-top: 30px;
+      color: aliceblue;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .keep-me {
+    input {
+        margin-left: 15px;
+    }
+  }
+  .link a{
+    color: blueviolet;
+    margin-left: 35px;
+  }
+}

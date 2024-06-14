@@ -1,0 +1,37 @@
+<app-header>
+  <a header-title href="">
+    @if (user$ | async; as user) {
+      welcome to shop, {{ user.firstName }}
+    } @else {
+      Shop
+    }
+  </a>
+
+  <form header-actions action="">
+    @if (user$ | async) {
+     <button class="button"
+     (click)="authService.signOut()"
+     >Sign Out</button>
+     
+    } @else {
+      <a routerLink="/auth" routerLinkActive="active"
+        ><i class="fa-regular fa-user"></i
+      ></a>
+    }
+
+    <a
+      routerLinkActive="active"
+      type="button"
+      routerLink="/home"
+      routerLinkActive="active"
+    >
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <a routerLink="/cart" routerLinkActive="active"
+      ><i class="fa-solid fa-cart-shopping"></i
+    ></a>
+  </form>
+</app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
