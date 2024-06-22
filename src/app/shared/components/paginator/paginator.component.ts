@@ -15,8 +15,7 @@ export class PaginatorComponent {
   @Input({ required: true }) total = 0;
   @Input() sizeOptions: number[] = [5, 10, 15];
   @Output() pageChange = new EventEmitter<{ pageSize: number, pageIndex: number }>();
-  // @Output() pageSizeChange = new EventEmitter<number>();
-  // @Output() pageIndexChange = new EventEmitter<number>();
+ 
 
   get totalPages() {
     var totalPages = Math.ceil(this.total / this.pageSize) || 1;

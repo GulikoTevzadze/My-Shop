@@ -1,6 +1,6 @@
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(4, 350px);
   gap: 40px;
   align-items: center;
   justify-content: center;
@@ -16,9 +16,26 @@
   border-radius: 5px;
   margin: 5px;
 }
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 250px);
+  }
+
   .checkout button {
     font-size: 24px;
     min-width: 196px;
   }
 }
+@media (max-width: 992px){
+  .products-grid {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+}
+@media (max-width: 767px){
+  .products-grid {
+    grid-template-columns: repeat(1, 350px);
+  }
+
+}
+

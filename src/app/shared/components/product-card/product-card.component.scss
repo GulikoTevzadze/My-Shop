@@ -58,3 +58,20 @@
   transform: scale(1.1);
   box-shadow: 6px 6px 26px 12px rgba(54, 5, 63, 0.22);
 }
+@media (max-width: 1200px){
+  .card{
+    width: 250px;
+  }
+}
+@media (max-width: 992px){
+  .card{
+    width: 250px;
+  }
+
+}
+@media (max-width:767px){
+  .card{
+    width: 350px;
+  }
+
+}
