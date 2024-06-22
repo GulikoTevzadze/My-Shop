@@ -235,6 +235,10 @@ strike.straight::before {
     .product_images {
       width: 100%;
       height: 70%;
+      .product-main-image {
+        max-width: 400px;
+        max-height: 400px;
+      }
     }
     .badge {
       position: absolute;
